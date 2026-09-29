@@ -1,0 +1,97 @@
+@define-color surface_container_lowest #101010;
+@define-color surface_container_low    #252525; 
+@define-color surface_container        #9e8e72; 
+@define-color primary                  #d4d4d4;
+@define-color on_background            #555555;
+@define-color error                    #ea6962;
+
+/* ========== GLOBAL ========== */
+* {
+    font-family: "JetBrainsMono NFP", monospace;
+    font-size: 16px;
+
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: @surface_container_lowest;
+    color: @on_background;
+    transition: background-color 0.1s;
+}
+
+.modules-left {
+    margin-left: 1px; 
+}
+
+/* ========== WORKSPACES ========== */
+#workspaces button {
+    color: @on_background;
+    padding: 0px 4px;
+    margin: 0px;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    color: @primary;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @surface_container_lowest;
+}
+
+/* ========== MODULES ========== */
+#clock,
+#pulseaudio,
+#mpd,
+#mpris,
+#battery,
+#custom-exit,
+#network,
+#tray,
+#language,
+#cpu,
+#memory {
+    color: @primary; 
+    padding: 4px 7px; /*4px makes the bar larger*/
+}
+
+/* Module-Specific Overrides */
+#clock.date {
+    color: @on_background;
+}
+
+#language,
+#cpu,
+#memory {
+    margin: 0 2px;
+}
+
+#tray {
+    margin: 0 7px;
+}
+
+#custom-trayicon {
+    font-size: 20px;
+    margin-left: 4px;
+}
+
+#window, 
+window#waybar.solo {
+    background-color: @surface_container_lowest;
+    color: @on_background;
+    padding: 0 10px;
+}
+
+/* ========== SEPARATORS ========== */
+#custom-left, 
+#custom-right, 
+#custom-sep {
+    color: @surface_container_low;
+}

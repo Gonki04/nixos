@@ -1,0 +1,65 @@
+{ config, lib, inputs, pkgs, ... }:
+
+{
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
+  programs.hyprland.enable = true;
+
+  # for proprietary stuff like nvidia drivers & apps such as spotify, etc..
+  nixpkgs.config.allowUnfree = true;
+
+  imports = [
+      /etc/nixos/hardware-configuration.nix
+  ];
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  zramSwap.enable = true;
+  zramSwap.algorithm = "zstd";
+
+  networking.hostName = "nixos";
+  time.timeZone = "Europe/London";
+
+  # Pick only one of the below networking options.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 4d";
+  };
+
+  users.users.gonki = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    packages = with pkgs; [];
+  };
+
+  environment.systemPackages = with pkgs; [
+  ];
+  
+  # Services
+  services.openssh.enable = true;
+  services.flatpak.enable = true;
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
+
+  # we love nvidia
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+  };
+
+  system.stateVersion = "26.05"; # DO NOT change
+}
