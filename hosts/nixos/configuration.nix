@@ -7,6 +7,9 @@
   programs.hyprland.enable = true;
   programs.wireshark.enable = true;
 
+  # daemon power profiles
+  services.power-profiles-daemon.enable = true;
+
   # for proprietary stuff like nvidia drivers & apps such as spotify, etc..
   nixpkgs.config.allowUnfree = true;
 
