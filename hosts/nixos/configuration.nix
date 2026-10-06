@@ -5,12 +5,14 @@
 
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
   programs.hyprland.enable = true;
+  programs.wireshark.enable = true;
 
   # for proprietary stuff like nvidia drivers & apps such as spotify, etc..
   nixpkgs.config.allowUnfree = true;
 
   imports = [
       /etc/nixos/hardware-configuration.nix
+      ../../modules/system/virtualbox.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -35,13 +37,37 @@
 
   users.users.gonki = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "vboxusers" "wireshark" ];
     packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
+    xorg.xhost
+    qt5.qtwayland
+    qt6.qtwayland
   ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
   
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = ["gtk"];
+      };
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+        "org.freedesktop.impl.portal.Screencast" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+      };
+    };
+  };
+
   # Services
   services.openssh.enable = true;
   services.flatpak.enable = true;
@@ -60,6 +86,6 @@
     open = true;
     nvidiaSettings = true;
   };
-
+  
   system.stateVersion = "26.05"; # DO NOT change
 }

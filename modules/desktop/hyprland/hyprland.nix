@@ -13,12 +13,6 @@
     slurp
   ];
 
-  xdg.portal = {
-  enable = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  config.common.default = "*";
-  };
-
   home.file.".config/hypr" = {
     target = ".config/hypr"; 
     source = ./config; 
