@@ -50,6 +50,13 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+
+systemd.user.services.xdg-desktop-portal = {
+  unitConfig = {
+    PartOf = lib.mkForce [ ];
+    After = lib.mkForce [ "dbus.socket" ];
+  };
+};
   
   xdg.portal = {
     enable = true;
