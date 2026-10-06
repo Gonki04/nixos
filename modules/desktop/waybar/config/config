@@ -17,6 +17,7 @@
     "pulseaudio",
     "battery",
     "network",
+    "power-profiles-daemon",
     "custom/right"
   ],
 
@@ -57,6 +58,17 @@
     "format-muted": "<span color='#a89984'>vol</span> muted",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "kitty -T wiremix wiremix"
+  },
+  "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+    }
   },
   "battery": {
     "states": {
