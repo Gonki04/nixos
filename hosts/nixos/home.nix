@@ -21,7 +21,6 @@ in
     # (M "desktop/fuzzel/fuzzel.nix")
     (M "desktop/mako/mako.nix")
     (M "desktop/swww/swww.nix")
-    (M "desktop/wallpaper/hyprpaper.nix")
 
     (M "apps/spotify.nix")
     # (M "apps/stremio.nix") # NOTE: for now it is not being installed automatically. install it via flatpak
