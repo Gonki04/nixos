@@ -1,29 +1,29 @@
 [mgr]
-cwd = { fg = "#a89984" }
+cwd = { fg = "#FFFFFF" }
 
 # Find
-find_keyword  = { fg = "#a89984", bold = true, italic = true, underline = true }
-find_position = { fg = "#252525", bg = "#a89984", bold = true, italic = true }
+find_keyword  = { fg = "#FFFFFF", bold = true, italic = true, underline = true }
+find_position = { fg = "#080808", bg = "#D0D0D0", bold = true, italic = true }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "#252525" }
+border_style  = { fg = "#404040" }
 
 [tabs]
-active   = { fg = "#d4d4d4", bg = "#252525", bold = true }
-inactive = { fg = "#555555", bg = "#101010" }
+active   = { fg = "#FFFFFF", bg = "#222222", bold = true }
+inactive = { fg = "#777777", bg = "#080808" }
 
 # Remove rounded powerline symbols
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
 [mode]
-normal_main = { fg = "#101010", bg = "#a89984", bold = true }
-normal_alt  = { fg = "#d4d4d4", bg = "#252525" }
-select_main = { fg = "#101010", bg = "#ea6962", bold = true }
-select_alt  = { fg = "#d4d4d4", bg = "#252525" }
-unset_main  = { fg = "#101010", bg = "#555555", bold = true }
-unset_alt   = { fg = "#d4d4d4", bg = "#252525" }
+normal_main = { fg = "#080808", bg = "#D0D0D0", bold = true }
+normal_alt  = { fg = "#EEEEEE", bg = "#222222" }
+select_main = { fg = "#080808", bg = "#FFFFFF", bold = true }
+select_alt  = { fg = "#EEEEEE", bg = "#222222" }
+unset_main  = { fg = "#080808", bg = "#777777", bold = true }
+unset_alt   = { fg = "#EEEEEE", bg = "#222222" }
 
 [status]
 # Remove rounded powerline symbols
@@ -31,28 +31,28 @@ sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_sep  = { fg = "#252525" }
-perm_type = { fg = "#a89984" }
-perm_read = { fg = "#d4d4d4" }
-perm_write= { fg = "#ea6962" }
-perm_exec = { fg = "#555555" }
+perm_sep  = { fg = "#404040" }
+perm_type = { fg = "#B8B8B8" }
+perm_read = { fg = "#EEEEEE" }
+perm_write= { fg = "#FFFFFF" }
+perm_exec = { fg = "#777777" }
 
 [input]
-border   = { fg = "#252525" }
+border   = { fg = "#404040" }
 selected = { reversed = true }
 
 [pick]
-border   = { fg = "#252525" }
-active   = { fg = "#a89984", bold = true }
+border   = { fg = "#404040" }
+active   = { fg = "#FFFFFF", bold = true }
 
 [confirm]
-border   = { fg = "#252525" }
-title    = { fg = "#a89984" }
+border   = { fg = "#404040" }
+title    = { fg = "#FFFFFF" }
 
 # Force all file types to a single text color to prevent random bright highlights
 [filetype]
 rules = [
-    { url = "*", fg = "#d4d4d4" }
+    { url = "*", fg = "#EEEEEE" }
 ]
 
 [indicator]

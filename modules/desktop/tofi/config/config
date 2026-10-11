@@ -3,13 +3,13 @@ font-size = 12
 prompt-text = "> "
 
 # --- Colors
-background-color = #101010
-text-color = #555555
-prompt-color = #a89984
-selection-color = #d4d4d4
-selection-match-color = #a89984
-selection-background = #252525
-border-color = #252525
+background-color = #080808
+text-color = #B8B8B8
+prompt-color = #FFFFFF
+selection-color = #080808
+selection-match-color = #FFFFFF
+selection-background = #E0E0E0
+border-color = #404040
 
 # --- Geometry
 width = 550

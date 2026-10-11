@@ -25,14 +25,14 @@
   
       # status line
       set -g status-position bottom 
-      set -g status-bg "#101010"
-      set -g status-fg "#a89984"
+      set -g status-bg "#080808"
+      set -g status-fg "#B8B8B8"
       set -g status-left '#{session_name} - '
       set -g status-right ""
       set -g status-right-length 50
       set -g status-left-length 20 
-      setw -g window-status-current-format ' #I#[fg=#252525]:#[fg=#d4d4d4]#W#[fg=#a89984]#F '
-      setw -g window-status-format ' #I#[fg=#252525]:#[fg=#555555]#W#[fg=#252525]#F '
+      setw -g window-status-current-format ' #I#[fg=#777777]:#[fg=#FFFFFF]#W#[fg=#B8B8B8]#F '
+      setw -g window-status-format ' #I#[fg=#404040]:#[fg=#777777]#W#[fg=#404040]#F '
   
       # vim movement
       bind-key h select-pane -L
