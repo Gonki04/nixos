@@ -17,10 +17,15 @@ let
         esac
       done
 
-      if [ -n "$gpu_device" ] && [ -r "$gpu_device/power/runtime_status" ]; then
+      if [ -z "$gpu_device" ]; then
+        printf '%s\n' 'N/A'
+        exit 0
+      fi
+
+      if [ -r "$gpu_device/power/runtime_status" ]; then
         runtime_status=$(cat "$gpu_device/power/runtime_status" 2>/dev/null || true)
         if [ "$runtime_status" = "suspended" ]; then
-          printf '%s\n' '—'
+          printf '%s\n' '0%'
           exit 0
         fi
       fi
@@ -30,7 +35,7 @@ let
         nvidia_smi=$(command -v nvidia-smi 2>/dev/null || true)
       fi
       if [ -z "$nvidia_smi" ]; then
-        printf '%s\n' '—'
+        printf '%s\n' 'N/A'
         exit 0
       fi
 
@@ -38,7 +43,7 @@ let
       if [[ "$usage" =~ ^[0-9]+$ ]]; then
         printf '%s%%\n' "$usage"
       else
-        printf '%s\n' '—'
+        printf '%s\n' 'ERR'
       fi
     '';
   };

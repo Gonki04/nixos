@@ -79,7 +79,7 @@
     },
     "format": "BAT {capacity}%",
     "format-charging": "CHG {capacity}%",
-    "format-plugged": "AC {capacity}%",
+    "format-plugged": "PLUG {capacity}%",
     "format-time": "{H}:{M}",
     "interval": 5
   },
@@ -111,7 +111,7 @@
     "exec": "waybar-gpu-usage",
     "interval": 5,
     "tooltip": true,
-    "tooltip-format": "NVIDIA GPU usage; — means the GPU is asleep or unavailable",
+    "tooltip-format": "NVIDIA GPU utilization. Shows 0% while the card is asleep to save power; uses nvidia-smi while active. N/A = card/tool unavailable; ERR = query failed.",
     "max-length": 12
   },
   "memory": {

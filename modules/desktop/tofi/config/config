@@ -4,7 +4,7 @@ prompt-text = "> "
 
 # --- Colors
 background-color = #080808
-text-color = #B8B8B8
+text-color = #FFFFFF
 prompt-color = #FFFFFF
 selection-color = #080808
 selection-match-color = #FFFFFF

@@ -1,14 +1,14 @@
-@define-color black #080808;
-@define-color surface #141414;
-@define-color raised #222222;
+@define-color black #000000;
+@define-color surface #101010;
+@define-color raised #1B1B1B;
 @define-color line #383838;
-@define-color muted #777777;
-@define-color secondary #B8B8B8;
-@define-color white #F5F5F5;
+@define-color muted #B8B8B8;
+@define-color secondary #FFFFFF;
+@define-color white #FFFFFF;
 
 * {
     font-family: "JetBrainsMono NFP", monospace;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -81,13 +81,13 @@ window#waybar {
 }
 
 #power-profiles-daemon.balanced {
-    color: @secondary;
-    border-bottom-color: #888888;
+    color: #D8D8D8;
+    border-bottom-color: #D8D8D8;
 }
 
 #power-profiles-daemon.power-saver {
-    color: @muted;
-    border-bottom-color: #555555;
+    color: #AAAAAA;
+    border-bottom-color: #AAAAAA;
 }
 
 #language,
