@@ -110,8 +110,7 @@
     "format": "󰢮 {}",
     "exec": "waybar-gpu-usage",
     "interval": 5,
-    "tooltip": true,
-    "tooltip-format": "NVIDIA GPU utilization. Shows 0% while the card is asleep to save power; uses nvidia-smi while active. N/A = card/tool unavailable; ERR = query failed.",
+    "tooltip": false,
     "max-length": 12
   },
   "memory": {

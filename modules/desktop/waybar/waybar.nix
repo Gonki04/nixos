@@ -18,7 +18,7 @@ let
       done
 
       if [ -z "$gpu_device" ]; then
-        printf '%s\n' 'N/A'
+        printf '%s\n' '--'
         exit 0
       fi
 
@@ -35,7 +35,7 @@ let
         nvidia_smi=$(command -v nvidia-smi 2>/dev/null || true)
       fi
       if [ -z "$nvidia_smi" ]; then
-        printf '%s\n' 'N/A'
+        printf '%s\n' '--'
         exit 0
       fi
 
@@ -43,7 +43,7 @@ let
       if [[ "$usage" =~ ^[0-9]+$ ]]; then
         printf '%s%%\n' "$usage"
       else
-        printf '%s\n' 'ERR'
+        printf '%s\n' '--'
       fi
     '';
   };

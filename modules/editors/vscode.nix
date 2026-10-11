@@ -17,7 +17,11 @@
           "foreground" = "#E0E0E0";
           "descriptionForeground" = "#888888";
           "textLink.foreground" = "#FFFFFF";
-          "errorForeground" = "#FFFFFF";
+          "errorForeground" = "#FF5F5F";
+          "editorError.foreground" = "#FF5F5F";
+          "editorWarning.foreground" = "#F1FA8C";
+          "editorInfo.foreground" = "#61A0FF";
+          "editorHint.foreground" = "#4DD0E1";
           "activityBar.background" = "#101010";
           "activityBar.foreground" = "#EEEEEE";
           "activityBar.inactiveForeground" = "#777777";
@@ -47,25 +51,26 @@
           "tab.inactiveForeground" = "#777777";
           "panel.background" = "#080808";
           "panel.border" = "#303030";
-          "terminal.background" = "#080808";
-          "terminal.foreground" = "#E0E0E0";
+          "terminal.background" = "#000000";
+          "terminal.foreground" = "#FFFFFF";
           "terminalCursor.foreground" = "#FFFFFF";
-          "terminal.selectionBackground" = "#383838";
-          "terminal.ansiBlack" = "#080808";
-          "terminal.ansiRed" = "#888888";
-          "terminal.ansiGreen" = "#A0A0A0";
-          "terminal.ansiYellow" = "#B8B8B8";
-          "terminal.ansiBlue" = "#707070";
-          "terminal.ansiMagenta" = "#999999";
-          "terminal.ansiCyan" = "#C0C0C0";
-          "terminal.ansiWhite" = "#E0E0E0";
-          "terminal.ansiBrightBlack" = "#505050";
-          "terminal.ansiBrightRed" = "#AAAAAA";
-          "terminal.ansiBrightGreen" = "#B8B8B8";
-          "terminal.ansiBrightYellow" = "#FFFFFF";
-          "terminal.ansiBrightBlue" = "#909090";
-          "terminal.ansiBrightMagenta" = "#D0D0D0";
-          "terminal.ansiBrightCyan" = "#E0E0E0";
+          "terminal.selectionBackground" = "#FFFFFF";
+          "terminal.selectionForeground" = "#000000";
+          "terminal.ansiBlack" = "#000000";
+          "terminal.ansiRed" = "#FF5F5F";
+          "terminal.ansiGreen" = "#50FA7B";
+          "terminal.ansiYellow" = "#F1FA8C";
+          "terminal.ansiBlue" = "#61A0FF";
+          "terminal.ansiMagenta" = "#D586FF";
+          "terminal.ansiCyan" = "#4DD0E1";
+          "terminal.ansiWhite" = "#D0D0D0";
+          "terminal.ansiBrightBlack" = "#767676";
+          "terminal.ansiBrightRed" = "#FF7A7A";
+          "terminal.ansiBrightGreen" = "#76FF9A";
+          "terminal.ansiBrightYellow" = "#FFFFA5";
+          "terminal.ansiBrightBlue" = "#8BB8FF";
+          "terminal.ansiBrightMagenta" = "#E0A4FF";
+          "terminal.ansiBrightCyan" = "#79E6F3";
           "terminal.ansiBrightWhite" = "#FFFFFF";
         };
         "editor.tokenColorCustomizations" = {
@@ -76,27 +81,27 @@
             }
             {
               "scope" = [ "string" "punctuation.definition.string" ];
-              "settings" = { "foreground" = "#C8C8C8"; };
+              "settings" = { "foreground" = "#50FA7B"; };
             }
             {
               "scope" = [ "keyword" "storage" "constant.language" ];
-              "settings" = { "foreground" = "#FFFFFF"; "fontStyle" = "bold"; };
+              "settings" = { "foreground" = "#D586FF"; "fontStyle" = "bold"; };
             }
             {
               "scope" = [ "entity.name.function" "support.function" ];
-              "settings" = { "foreground" = "#E0E0E0"; };
+              "settings" = { "foreground" = "#61A0FF"; };
             }
             {
               "scope" = [ "entity.name.type" "entity.name.class" "support.type" ];
-              "settings" = { "foreground" = "#B8B8B8"; };
+              "settings" = { "foreground" = "#F1FA8C"; };
             }
             {
               "scope" = [ "constant.numeric" "constant.character" "variable" ];
-              "settings" = { "foreground" = "#D0D0D0"; };
+              "settings" = { "foreground" = "#4DD0E1"; };
             }
             {
               "scope" = [ "punctuation" "keyword.operator" ];
-              "settings" = { "foreground" = "#888888"; };
+              "settings" = { "foreground" = "#D0D0D0"; };
             }
           ];
         };
@@ -104,13 +109,13 @@
           "enabled" = true;
           "rules" = {
             "variable" = "#E0E0E0";
-            "parameter" = "#B8B8B8";
-            "function" = "#D0D0D0";
-            "method" = "#D0D0D0";
-            "class" = "#C0C0C0";
-            "type" = "#B8B8B8";
-            "property" = "#CCCCCC";
-            "keyword" = "#FFFFFF";
+            "parameter" = "#4DD0E1";
+            "function" = "#61A0FF";
+            "method" = "#8BB8FF";
+            "class" = "#F1FA8C";
+            "type" = "#F1FA8C";
+            "property" = "#D0D0D0";
+            "keyword" = "#D586FF";
           };
         };
 

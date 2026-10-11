@@ -21,18 +21,18 @@
     ];
   
     extraConfig = ''
-      set-option -ga terminal-overrides ",xterm-256color:Tc"
+      set-option -ga terminal-overrides ",screen-256color:Tc,xterm-256color:Tc"
   
       # status line
       set -g status-position bottom 
-      set -g status-bg "#080808"
-      set -g status-fg "#B8B8B8"
+      set -g status-bg "#000000"
+      set -g status-fg "#FFFFFF"
       set -g status-left '#{session_name} - '
       set -g status-right ""
       set -g status-right-length 50
       set -g status-left-length 20 
       setw -g window-status-current-format ' #I#[fg=#777777]:#[fg=#FFFFFF]#W#[fg=#B8B8B8]#F '
-      setw -g window-status-format ' #I#[fg=#404040]:#[fg=#777777]#W#[fg=#404040]#F '
+      setw -g window-status-format ' #I#[fg=#777777]:#[fg=#B8B8B8]#W#[fg=#777777]#F '
   
       # vim movement
       bind-key h select-pane -L
