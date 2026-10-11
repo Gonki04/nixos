@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "spacing": 4,
+  "spacing": 2,
 
   "modules-left": [
     "hyprland/workspaces", 
@@ -12,15 +12,13 @@
     "custom/right"
   ],
   "modules-right": [
-    "group/tray",
-    "custom/left",
     "cpu",
     "custom/gpu",
     "power-profiles-daemon",
+    "network",
     "pulseaudio",
     "battery",
-    "network",
-    "custom/right"
+    "group/tray"
   ],
 
   "group/tray": {
@@ -56,20 +54,23 @@
   },
 
   "pulseaudio": {
-    "format": "VOL {volume}%",
-    "format-muted": "VOL muted",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "kitty -T wiremix wiremix"
   },
   "power-profiles-daemon": {
-    "format": "{icon} {profile}",
-    "tooltip-format": "Power profile: {profile}\nCPU driver: {cpu_driver}\nPlatform driver: {platform_driver}",
+    "format": "{icon}",
+    "tooltip-format": "{profile}",
     "tooltip": true,
     "format-icons": {
-      "default": "●",
-      "performance": "▲",
-      "balanced": "●",
-      "power-saver": "▼"
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
     }
   },
   "battery": {
@@ -77,16 +78,17 @@
       "warning": 20,
       "critical": 10
     },
-    "format": "BAT {capacity}%",
-    "format-charging": "CHG {capacity}%",
-    "format-plugged": "PLUG {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
     "format-time": "{H}:{M}",
     "interval": 5
   },
   "network": {
     "interface": "wl*",
-    "format": "{ifname}",
-    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format": "{icon}",
+    "format-ethernet": "󰈀",
     "format-wifi": "{icon}",
     "format-disconnected": "󰖪",
     "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
