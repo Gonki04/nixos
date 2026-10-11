@@ -17,7 +17,6 @@
     "pulseaudio",
     "battery",
     "network",
-    "custom/fan",
     "power-profiles-daemon",
     "custom/right"
   ],
@@ -93,13 +92,6 @@
     "on-click": "kitty -T nmtui nmtui",
     "interval": 3
   },
-  "custom/fan": {
-    "format": "fan",
-    "tooltip": true,
-    "tooltip-format": "Click to choose automatic, 50%, 75% or full speed",
-    "on-click": "g6x-fan-menu"
-  },
-
   "custom/trayicon": {
     "format": "󰶺"
   },

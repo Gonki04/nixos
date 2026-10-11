@@ -12,11 +12,6 @@
     swww.url = "github:LGFae/swww";
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # CLI fan control for the Gigabyte G6X's Clevo-based EC.
-    gigactl-src = {
-      url = "github:smairio/gigactl";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

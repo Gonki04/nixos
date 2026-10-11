@@ -16,7 +16,6 @@
   imports = [
       /etc/nixos/hardware-configuration.nix
       ../../modules/system/virtualbox.nix
-      ../../modules/system/gigactl.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
