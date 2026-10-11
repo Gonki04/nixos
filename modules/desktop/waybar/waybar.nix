@@ -35,10 +35,11 @@ let
       fi
 
       usage=$("$nvidia_smi" --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || true)
-      case "$usage" in
-        ''|*[!0-9]*) printf '%s\n' '—' ;;
-        *) printf '%s%%\n' "$usage" ;;
-      esac
+      if [[ "$usage" =~ ^[0-9]+$ ]]; then
+        printf '%s%%\n' "$usage"
+      else
+        printf '%s\n' '—'
+      fi
     '';
   };
 in
