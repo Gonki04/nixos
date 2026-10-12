@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "spacing": 2,
+  "spacing": 1,
 
   "modules-left": [
     "hyprland/workspaces", 
@@ -32,23 +32,24 @@
   }, 
 
   "hyprland/workspaces": {
-    "format": "{id}{icon}",
+    "format": "{icon}",
     "format-icons": {
-      "active": "*",
-      "default": ""
+      "active": "●",
+      "default": "●",
+      "urgent": "●"
     }
   },
   "mpris": {
     "player": "playerctld",
     "format": "{dynamic}",
     "interval": 1,
-    "dynamic-len": 100,
+    "dynamic-len": 48,
     "dynamic-order": ["artist", "title"]
   },
 
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%A, %B %d %H:%M}",
+    "format": "{:%a %d/%m/%Y · %H:%M}",
+    "format-alt": "{:%A, %B %d · %H:%M}",
     "on-click": "mode",
     "tooltip": false
   },
@@ -100,8 +101,8 @@
     "format": "󰶺"
   },
   "tray": {
-    "icon-size": 21,
-    "spacing": 10
+    "icon-size": 14,
+    "spacing": 5
   },
   "cpu": {
     "interval": 5,

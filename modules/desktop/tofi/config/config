@@ -1,29 +1,29 @@
 font = "JetBrainsMono NFP"
-font-size = 12
+font-size = 11
 prompt-text = "> "
 
 # --- Colors
 background-color = #080808
 text-color = #FFFFFF
 prompt-color = #FFFFFF
-selection-color = #080808
+selection-color = #FFFFFF
 selection-match-color = #FFFFFF
-selection-background = #E0E0E0
-border-color = #404040
+selection-background = #242424
+border-color = #505050
 
 # --- Geometry
-width = 550
-height = 360
-border-width = 2
+width = 420
+height = 210
+border-width = 1
 outline-width = 0
-padding-top = 15
-padding-bottom = 15
-padding-left = 15
-padding-right = 15
+padding-top = 10
+padding-bottom = 10
+padding-left = 10
+padding-right = 10
 
 # --- Extra stuff
 selection-background-padding = -1
 
 # --- Layout ---
-result-spacing = 0
-num-results = 20
+result-spacing = 2
+num-results = 5

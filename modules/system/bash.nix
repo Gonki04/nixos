@@ -24,13 +24,13 @@
         rm -f -- "$tmp"
       }
 
-      # --- General .bashrc Setup ---
-      export PS1='\[\033[1;37m\]\u@\h \[\033[37m\]\w\[\033[0m\]$ '
-
       # --- Machine-Specific Complement ---
       if [ -f ~/.complement_bashrc ]; then
         source ~/.complement_bashrc
       fi
+
+      # Keep the shell's existing ANSI colors; highlight only the username.
+      export PS1='\[\033[1;32m\]\u\[\033[1;37m\]@\h \[\033[37m\]\w\[\033[0m\]$ '
     '';
   };
 }
