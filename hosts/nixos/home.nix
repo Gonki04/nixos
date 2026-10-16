@@ -37,6 +37,7 @@ in
     (M "system/bash.nix")
     (M "system/audio.nix")
     (M "system/hypridle.nix")
+    (M "system/docker.nix")
 
     (M "terminals/tmux.nix")
 
