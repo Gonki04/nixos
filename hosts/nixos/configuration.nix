@@ -41,7 +41,7 @@
 
   users.users.gonki = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "vboxusers" "wireshark" ];
+    extraGroups = [ "wheel" "networkmanager" "vboxusers" "wireshark" "docker" ];
     packages = with pkgs; [];
   };
 
