@@ -17,6 +17,7 @@
       /etc/nixos/hardware-configuration.nix
       ../../modules/system/virtualbox.nix
       ../../modules/system/docker.nix
+      ../../modules/system/grub.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
