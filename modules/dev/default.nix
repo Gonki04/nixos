@@ -6,5 +6,7 @@
     gnumake
     jdk21_headless
     nodejs_22
+    zig
+    steam-run
   ];
 }
