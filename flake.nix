@@ -1,5 +1,5 @@
 {
-  description = "Nixos conf";
+  description = "Nixos conf (WSL branch)";
 
   inputs = {
     nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
@@ -9,38 +9,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    swww.url = "github:LGFae/swww";
-    hyprland.url = "github:hyprwm/Hyprland";
-
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... }@inputs:
   let
-    # Reusable function to configure a single NixOS system
     mkNixosSystem = { system, hostname, username, extraModules ? [] }:
       nixpkgs.lib.nixosSystem {
         inherit system;
-        
         specialArgs = { inherit inputs; };
 
         modules = [
           ./hosts/${hostname}/configuration.nix
-          
-          # 2. Integrate Home Manager as a NixOS module
+
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-  
               backupFileExtension = "backup";
-
               extraSpecialArgs = {
                 inherit inputs;
                 hostName = hostname;
               };
-              
-              # Specify which user's config to apply on this host
               users.${username} = import ./hosts/${hostname}/home.nix;
             };
           }
@@ -52,7 +44,8 @@
       nixos = mkNixosSystem {
         system = "x86_64-linux";
         hostname = "nixos";
-        username = "gonki"; 
+        username = "gonkixos";
+        extraModules = [ nixos-wsl.nixosModules.default ];
       };
     };
   };

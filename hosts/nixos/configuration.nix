@@ -1,36 +1,38 @@
 { config, lib, inputs, pkgs, ... }:
 
 {
+  wsl.enable = true;
+  wsl.defaultUser = "gonkixos"
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
-  programs.hyprland.enable = true;
-  programs.wireshark.enable = true;
+  #programs.hyprland.enable = true;
+  #programs.wireshark.enable = true;
 
   # daemon power profiles
-  services.power-profiles-daemon.enable = true;
+  #services.power-profiles-daemon.enable = true;
 
   # for proprietary stuff like nvidia drivers & apps such as spotify, etc..
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-      /etc/nixos/hardware-configuration.nix
-      ../../modules/system/virtualbox.nix
+      #/etc/nixos/hardware-configuration.nix
+      #../../modules/system/virtualbox.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
 
-  zramSwap.enable = true;
-  zramSwap.algorithm = "zstd";
+  #zramSwap.enable = true;
+  #zramSwap.algorithm = "zstd";
 
   networking.hostName = "nixos";
   time.timeZone = "Europe/London";
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  #networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   nix.gc = {
     automatic = true;
@@ -40,61 +42,61 @@
 
   users.users.gonki = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "vboxusers" "wireshark" ];
+    extraGroups = [ "wheel" ];
     packages = with pkgs; [];
   };
 
-  environment.systemPackages = with pkgs; [
-    xorg.xhost
-    qt5.qtwayland
-    qt6.qtwayland
-  ];
+#  environment.systemPackages = with pkgs; [
+#   xorg.xhost
+#    qt5.qtwayland
+#    qt6.qtwayland
+#  ];
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
+#  environment.sessionVariables = {
+#    NIXOS_OZONE_WL = "1";
+# };
 
-  systemd.user.targets.hyprland-session = {
-    description = "Hyprland compositor session";
-    bindsTo = [ "graphical-session.target" ];
-    wants = [ "graphical-session-pre.target" ];
-    after = [ "graphical-session-pre.target" ]; 
-  };
+#  systemd.user.targets.hyprland-session = {
+#    description = "Hyprland compositor session";
+#    bindsTo = [ "graphical-session.target" ];
+#    wants = [ "graphical-session-pre.target" ];
+#    after = [ "graphical-session-pre.target" ]; 
+#  };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = ["gtk"];
-      };
-      hyprland = {
-        default = [ "hyprland" "gtk" ];
-      };
-    };
-  };
+#  xdg.portal = {
+#    enable = true;
+#    extraPortals = [
+#      pkgs.xdg-desktop-portal-hyprland
+#      pkgs.xdg-desktop-portal-gtk
+#    ];
+#    config = {
+#      common = {
+#        default = ["gtk"];
+#      };
+#      hyprland = {
+#        default = [ "hyprland" "gtk" ];
+#      };
+#    };
+#  };
 
   # Services
   services.openssh.enable = true;
-  services.flatpak.enable = true;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
+#  services.flatpak.enable = true;
+#  services.pipewire = {
+#    enable = true;
+#    pulse.enable = true;
+#  };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+#  services.libinput.enable = true;
 
   # we love nvidia
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    nvidiaSettings = true;
-  };
+#  services.xserver.videoDrivers = [ "nvidia" ];
+#  hardware.nvidia = {
+#    modesetting.enable = true;
+#    open = true;
+#    nvidiaSettings = true;
+#  };
   
   system.stateVersion = "26.05"; # DO NOT change
 }

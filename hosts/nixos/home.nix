@@ -5,28 +5,28 @@ let
   M = path: import "${moduleRoot}/${path}";
 in
 {
-  home.username = "gonki";
-  home.homeDirectory = "/home/gonki";
+  home.username = "gonkixos";
+  home.homeDirectory = "/home/gonkixos";
   home.stateVersion = "26.05";
 
   imports = [
     (M "editors/vim/vim.nix")
     (M "editors/neovim.nix")
-    (M "editors/vscode.nix")
+#    (M "editors/vscode.nix")
 
-    (M "desktop/hyprland/hyprland.nix")
-    (M "desktop/hyprlock/hyprlock.nix")
-    (M "desktop/waybar/waybar.nix")
-    (M "desktop/tofi/tofi.nix")
+#    (M "desktop/hyprland/hyprland.nix")
+#    (M "desktop/hyprlock/hyprlock.nix")
+#    (M "desktop/waybar/waybar.nix")
+#    (M "desktop/tofi/tofi.nix")
     # (M "desktop/fuzzel/fuzzel.nix")
-    (M "desktop/mako/mako.nix")
-    (M "desktop/swww/swww.nix")
+#    (M "desktop/mako/mako.nix")
+#    (M "desktop/swww/swww.nix")
 
-    (M "apps/spotify.nix")
+#    (M "apps/spotify.nix")
     # (M "apps/stremio.nix") # NOTE: for now it is not being installed automatically. install it via flatpak
-    (M "apps/brave.nix")
-    (M "apps/vesktop.nix")
-    (M "apps/zotero.nix")
+#    (M "apps/brave.nix")
+#    (M "apps/vesktop.nix")
+#    (M "apps/zotero.nix")
 
     (M "tui/yazi/yazi.nix")
     (M "tui/btop/btop.nix")
@@ -35,8 +35,8 @@ in
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
-    (M "system/audio.nix")
-    (M "system/hypridle.nix")
+#    (M "system/audio.nix")
+#    (M "system/hypridle.nix")
 
     (M "terminals/tmux.nix")
 
@@ -45,7 +45,7 @@ in
 
     (M "dev/default.nix")
     (M "dev/lsps.nix")
-    (M "dev/vagrant.nix")
+#    (M "dev/vagrant.nix")
     # (M "dev/python-cuda.nix")
     (M "dev/python-standard.nix")
 
@@ -57,9 +57,9 @@ in
     cmatrix
   ];
 
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Forces Chromium and Electron apps to use native Wayland, should this be here?
-  };
+#  home.sessionVariables = {
+#    NIXOS_OZONE_WL = "1"; # Forces Chromium and Electron apps to use native Wayland, should this be here?
+#  };
 
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {
