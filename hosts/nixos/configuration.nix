@@ -2,7 +2,7 @@
 
 {
   wsl.enable = true;
-  wsl.defaultUser = "gonkixos"
+  wsl.defaultUser = "gonkixos";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
@@ -40,7 +40,7 @@
     options = "--delete-older-than 4d";
   };
 
-  users.users.gonki = {
+  users.users.gonkixos = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [];
