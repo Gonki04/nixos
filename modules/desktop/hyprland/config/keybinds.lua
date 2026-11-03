@@ -9,6 +9,7 @@ local colorPicker = "hyprpicker -a"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + D",      hl.dsp.window.close())
 hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + SPACE",  hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P",      hl.dsp.exec_cmd(pythonFloat))
 hl.bind(mainMod .. " + Print",  hl.dsp.exec_cmd("flameshot gui"))

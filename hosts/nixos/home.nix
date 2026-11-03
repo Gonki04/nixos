@@ -55,6 +55,11 @@ in
   home.packages = with pkgs;[
     # JUNK ::
     cmatrix
+    zvm
+  ];
+
+  home.sessionPath = [
+    "$HOME/.zvm/bin"
   ];
 
   home.sessionVariables = {

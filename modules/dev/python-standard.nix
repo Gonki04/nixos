@@ -7,6 +7,8 @@
   };
 
   home.packages = with pkgs; [
+    uv
+
     (python3.withPackages (ps: with ps; [
       numpy
       pyopencl

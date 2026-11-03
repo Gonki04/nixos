@@ -6,6 +6,14 @@
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
   programs.hyprland.enable = true;
   programs.wireshark.enable = true;
+  
+  # Graphical file manager
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+
+  # File manager integration
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 
   # daemon power profiles
   services.power-profiles-daemon.enable = true;
@@ -48,6 +56,7 @@
     xorg.xhost
     qt5.qtwayland
     qt6.qtwayland
+    evince
   ];
 
   environment.sessionVariables = {
